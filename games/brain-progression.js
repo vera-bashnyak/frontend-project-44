@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateNumber, randomIndex } from '../src/index.js';
+import { generateNumber, randomIndex, greeting } from '../src/index.js';
 
 const generateProgression = () => {
   const arr = [];
@@ -14,29 +14,27 @@ const generateProgression = () => {
   return arr;
 };
 
-const arrToString = (arr, num) => {
+const modifyArr = (arr, num) => {
   arr.splice(arr.indexOf(num), 1, '..');
   const string = arr.join(' ');
   return string;
 };
 
 const brainProgression = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const name = greeting();
   console.log('What number is missing in the progression?');
 
   for (let i = 1; i <= 3; i += 1) {
     const progression = generateProgression();
-    const result = progression[randomIndex(progression)];
-    const string = arrToString(progression, result);
+    const correctAnswer = progression[randomIndex(progression)];
+    const string = modifyArr(progression, correctAnswer);
     console.log(`Question: ${string}`);
     const answer = Number(readlineSync.question('Your answer: '));
 
-    if (result === answer) {
+    if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
       return;
     } if (i === 3) {

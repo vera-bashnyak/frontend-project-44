@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { generateNumber, randomIndex } from '../src/index.js';
+import { generateNumber, randomIndex, greeting } from '../src/index.js';
 
 const operators = ['+', '-', '*'];
 
@@ -20,9 +20,7 @@ const findResult = (operator, num1, num2) => {
 };
 
 const brainCalc = () => {
-  console.log('Welcome to the Brain Games!');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
+  const name = greeting();
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
@@ -30,12 +28,12 @@ const brainCalc = () => {
     const operator = operators[randomIndex(operators)];
     const number2 = generateNumber(1, 100);
     console.log(`Question: ${number1} ${operator} ${number2}`);
-    const result = findResult(operator, number1, number2);
+    const correctAnswer = findResult(operator, number1, number2);
     const answer = Number(readlineSync.question('Your answer: '));
-    if (result === answer) {
+    if (correctAnswer === answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
