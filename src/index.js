@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const generateNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const generateNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -8,4 +8,4 @@ export const greeting = () => {
   console.log(`Hello, ${name}!`);
 };
 
-export default generateNumber;
+export const randomIndex = (array) => Math.floor(Math.random() * (array.length - 1));

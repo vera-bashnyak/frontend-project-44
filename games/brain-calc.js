@@ -1,8 +1,7 @@
 import readlineSync from 'readline-sync';
-import generateNumber from '../src/index.js';
+import { generateNumber, randomIndex } from '../src/index.js';
 
 const operators = ['+', '-', '*'];
-const randomIndex = Math.floor(Math.random() * (operators.length - 1));
 
 const findResult = (operator, num1, num2) => {
   let result = 0;
@@ -28,7 +27,7 @@ const brainCalc = () => {
 
   for (let i = 1; i <= 3; i += 1) {
     const number1 = generateNumber(1, 100);
-    const operator = operators[randomIndex];
+    const operator = operators[randomIndex(operators)];
     const number2 = generateNumber(1, 100);
     console.log(`Question: ${number1} ${operator} ${number2}`);
     const result = findResult(operator, number1, number2);
