@@ -4,12 +4,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/dc1dd224ec54db04c58c/maintainability)](https://codeclimate.com/github/vera-bashnyak/frontend-project-44/maintainability)
 Проект представляет собой консольное приложение — набор из пяти простых математических игр.
 ## Установка
-***
 ```
 $ sudo npm link
 ```
 ## Игры
-***
 ### Игра "Проверка на чётность"
 Пользователю показывается случайное число и ему нужно ответить, чётное оно или нечётное.
 ```
