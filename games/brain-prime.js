@@ -17,16 +17,16 @@ const isAnswerCorrect = (correctAnswer, answer, name) => {
     console.log('Correct!');
     return true;
   }
-    switch (answer) {
-      case 'yes':
-        console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-        break;
-      default:
-        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-        break;
-    }
-    console.log(`Let's try again, ${name}!`);
-    return false;
+  switch (answer) {
+    case 'yes':
+      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+      break;
+    default:
+      console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+      break;
+  }
+  console.log(`Let's try again, ${name}!`);
+  return false;
 };
 
 const brainPrime = () => {

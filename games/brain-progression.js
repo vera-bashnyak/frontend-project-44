@@ -25,9 +25,9 @@ const isAnswerCorrect = (correctAnswer, answer, name) => {
     console.log('Correct!');
     return true;
   }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 };
 
 const brainProgression = () => {

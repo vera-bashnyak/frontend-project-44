@@ -19,10 +19,10 @@ const isAnswerCorrect = (divisor, answer, name) => {
   if (divisor === answer) {
     console.log('Correct!');
     return true;
-  } 
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${divisor}'`);
-    console.log(`Let's try again, ${name}!`);
-    return false;
+  }
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${divisor}'`);
+  console.log(`Let's try again, ${name}!`);
+  return false;
 };
 
 const brainGcd = () => {
