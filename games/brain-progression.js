@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { generateNumber, randomIndex, greeting } from '../src/index.js';
+import {
+  generateNumber, randomIndex, greeting, isAnswerCorrect,
+} from '../src/index.js';
 
 const generateProgression = () => {
   const arr = [];
@@ -18,16 +20,6 @@ const modifyArr = (arr, num) => {
   arr.splice(arr.indexOf(num), 1, '..');
   const string = arr.join(' ');
   return string;
-};
-
-const isAnswerCorrect = (correctAnswer, answer, name) => {
-  if (correctAnswer === answer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
 };
 
 const brainProgression = () => {

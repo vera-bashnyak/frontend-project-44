@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { generateNumber, randomIndex, greeting } from '../src/index.js';
+import {
+  generateNumber, randomIndex, greeting, isAnswerCorrect,
+} from '../src/index.js';
 
 const operators = ['+', '-', '*'];
 
@@ -17,16 +19,6 @@ const findResult = (operator, num1, num2) => {
       break;
   }
   return result;
-};
-
-const isAnswerCorrect = (correctAnswer, answer, name) => {
-  if (correctAnswer === answer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-  console.log(`Let's try again, ${name}!`);
-  return false;
 };
 
 const brainCalc = () => {
