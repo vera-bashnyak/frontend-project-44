@@ -19,6 +19,16 @@ const findResult = (operator, num1, num2) => {
   return result;
 };
 
+const isAnswerCorrect = (correctAnswer, answer, name) => {
+  if (correctAnswer === answer) {
+    console.log('Correct!');
+    return true;
+  } 
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
+    console.log(`Let's try again, ${name}!`);
+    return false;
+};
+
 const brainCalc = () => {
   const name = greeting();
   console.log('What is the result of the expression?');
@@ -30,16 +40,9 @@ const brainCalc = () => {
     console.log(`Question: ${number1} ${operator} ${number2}`);
     const correctAnswer = findResult(operator, number1, number2);
     const answer = Number(readlineSync.question('Your answer: '));
-    if (correctAnswer === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-    if (i === 3) {
-      console.log(`Congratulations, ${name}!`);
-    }
+    const check = isAnswerCorrect(correctAnswer, answer, name);
+    if (check === false) break;
+    console.log(`Congratulations, ${name}!`);
   }
 };
 

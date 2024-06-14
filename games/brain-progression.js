@@ -23,10 +23,11 @@ const modifyArr = (arr, num) => {
 const isAnswerCorrect = (correctAnswer, answer, name) => {
   if (correctAnswer === answer) {
     console.log('Correct!');
-  } else {
+    return true;
+  }
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
     console.log(`Let's try again, ${name}!`);
-  }
+    return false;
 };
 
 const brainProgression = () => {
@@ -39,7 +40,8 @@ const brainProgression = () => {
     const string = modifyArr(progression, correctAnswer);
     console.log(`Question: ${string}`);
     const answer = Number(readlineSync.question('Your answer: '));
-    isAnswerCorrect(correctAnswer, answer, name);
+    const check = isAnswerCorrect(correctAnswer, answer, name);
+    if (check === false) break;
     if (i === 3) {
       console.log(`Congratulations, ${name}!`);
     }
