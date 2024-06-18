@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import {
-  generateNumber, randomIndex, greeting, isAnswerCorrect,
-} from '../src/index.js';
+import greeting from '../cli.js';
+import getRandomInRange from '../utils.js';
+import { randomIndex, isAnswerCorrect } from '../index.js';
 
 const operators = ['+', '-', '*'];
 
@@ -26,9 +26,9 @@ const brainCalc = () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number1 = generateNumber(1, 100);
+    const number1 = getRandomInRange(1, 100);
     const operator = operators[randomIndex(operators)];
-    const number2 = generateNumber(1, 100);
+    const number2 = getRandomInRange(1, 100);
     console.log(`Question: ${number1} ${operator} ${number2}`);
     const correctAnswer = findResult(operator, number1, number2);
     const answer = Number(readlineSync.question('Your answer: '));

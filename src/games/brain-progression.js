@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
-import {
-  generateNumber, randomIndex, greeting, isAnswerCorrect,
-} from '../src/index.js';
+import greeting from '../cli.js';
+import getRandomInRange from '../utils.js';
+import { randomIndex, isAnswerCorrect } from '../index.js';
 
 const generateProgression = () => {
   const arr = [];
-  let number = generateNumber(1, 100);
-  const difference = generateNumber(2, 10);
+  let number = getRandomInRange(1, 100);
+  const difference = getRandomInRange(2, 10);
   let i = 0;
   while (i < 10) {
     arr.push(number);

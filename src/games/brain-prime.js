@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import { generateNumber, greeting } from '../src/index.js';
+import greeting from '../cli.js';
+import getRandomInRange from '../utils.js';
 
 const isNumberPrime = (num) => {
   let result = false;
@@ -34,7 +35,7 @@ const brainPrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let i = 1; i <= 3; i += 1) {
-    const number = generateNumber(2, 100);
+    const number = getRandomInRange(2, 100);
     const correctAnswer = isNumberPrime(number);
     console.log(`Question: ${number}`);
     const answer = readlineSync.question('Your answer: ');
