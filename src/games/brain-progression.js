@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-import getRandomInRange from '../utils.js';
-import { randomIndex, isAnswerCorrect } from '../index.js';
+import { getRandomInRange, randomIndex } from '../utils.js';
+import isAnswerCorrect from '../index.js';
 
 const generateProgression = () => {
   const arr = [];

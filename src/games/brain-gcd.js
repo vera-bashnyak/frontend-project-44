@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
 import getRandomInRange from '../utils.js';
-import { isAnswerCorrect } from '../index.js';
+import isAnswerCorrect from '../index.js';
 
 const findDivisor = (num1, num2) => {
   let a = num1;

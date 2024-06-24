@@ -1,6 +1,4 @@
-export const randomIndex = (array) => Math.floor(Math.random() * (array.length - 1));
-
-export const isAnswerCorrect = (correctAnswer, answer, name) => {
+const isAnswerCorrect = (correctAnswer, answer, name) => {
   if (correctAnswer === answer) {
     console.log('Correct!');
     return true;
@@ -9,3 +7,5 @@ export const isAnswerCorrect = (correctAnswer, answer, name) => {
   console.log(`Let's try again, ${name}!`);
   return false;
 };
+
+export default isAnswerCorrect;
