@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../cli.js';
-import { randomIndex, getRandomInRange } from '../utils.js';
+import getRandomInRange, { randomIndex } from '../utils.js';
 import isAnswerCorrect from '../index.js';
 
 const operators = ['+', '-', '*'];
