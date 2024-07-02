@@ -20,8 +20,9 @@ const generateRound = () => {
   const step = getRandomInRange(2, 10);
   const length = getRandomInRange(5, 10);
   const progression = generateProgression(start, step, length);
-  const answer = progression[randomIndex(progression)];
+  let answer = progression[randomIndex(progression)];
   const question = modifyArr(progression, answer);
+  answer = answer.toString();
   return [question, answer];
 };
 
