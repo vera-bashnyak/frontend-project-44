@@ -1,35 +1,32 @@
 import getRandomInRange, { randomIndex } from '../utils.js';
 import runEngine from '../index.js';
 
-const operators = ['+', '-', '*'];
-
-const findResult = (operator, num1, num2) => {
-  let result = 0;
+const calculation = (operator, num1, num2) => {
   switch (operator) {
     case '+':
-      result = num1 + num2;
-      break;
+      return num1 + num2;
     case '-':
-      result = num1 - num2;
-      break;
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
     default:
-      result = num1 * num2;
-      break;
+      throw new Error(`Invalid operator - ${operator}`);
   }
-  return result;
 };
 
-const rules = 'What is the result of the expression?';
-
 const generateRound = () => {
+  const operators = ['+', '-', '*'];
+
   const number1 = getRandomInRange(1, 100);
   const operator = operators[randomIndex(operators)];
   const number2 = getRandomInRange(1, 100);
-  const answer = findResult(operator, number1, number2);
-  return [`${number1} ${operator} ${number2} `, `${answer}`];
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = String(calculation(operator, number1, number2));
+  return [question, answer];
 };
 
 const brainCalc = () => {
+  const rules = 'What is the result of the expression?';
   runEngine(rules, generateRound);
 };
 

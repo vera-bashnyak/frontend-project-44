@@ -15,16 +15,16 @@ const findDivisor = (num1, num2) => {
   return gcd;
 };
 
-const rules = 'Find the greatest common divisor of given numbers.';
-
 const generateRound = () => {
   const number1 = getRandomInRange(1, 100);
   const number2 = getRandomInRange(1, 100);
-  const answer = findDivisor(number1, number2);
-  return [`${number1} ${number2} `, `${answer}`];
+  const answer = String(findDivisor(number1, number2));
+  const question = `${number1} ${number2}`;
+  return [question, answer];
 };
 
 const brainGcd = () => {
+  const rules = 'Find the greatest common divisor of given numbers.';
   runEngine(rules, generateRound);
 };
 
